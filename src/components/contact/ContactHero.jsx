@@ -25,6 +25,7 @@ export default function ContactHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
         >
+          <div>Hello piysuh</div>
           Get in touch with our expert team for professional consultation and personalized solutions for all your
           financial and legal requirements.
         </motion.p>
