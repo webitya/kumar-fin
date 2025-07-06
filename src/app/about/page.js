@@ -8,8 +8,6 @@ const AboutPage=()=> {
       <AboutHero />
       <AboutContent />
       <AboutCTA />
-      <h1>Aditya</h1>
-      <h1>Aditya</h1>
     </div>
   )
 }
