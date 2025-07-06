@@ -9,6 +9,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import StarIcon from "@mui/icons-material/Star";
 import GroupsIcon from "@mui/icons-material/Groups";
+import InfoIcon from "@mui/icons-material/Info";
 
 export default function HomeAbout() {
   const highlights = [
@@ -21,132 +22,122 @@ export default function HomeAbout() {
   ];
 
   const stats = [
-    { icon: <PersonIcon className="h-6 w-6" />, number: "500+", label: "Happy Clients" },
-    { icon: <BusinessCenterIcon className="h-6 w-6" />, number: "10+", label: "Years Experience" },
-    { icon: <StarIcon className="h-6 w-6" />, number: "50+", label: "Services Offered" },
-    { icon: <GroupsIcon className="h-6 w-6" />, number: "100%", label: "Client Satisfaction" },
+    { icon: <PersonIcon fontSize="small" />, number: "500+", label: "Happy Clients" },
+    { icon: <BusinessCenterIcon fontSize="small" />, number: "10+", label: "Years Experience" },
+    { icon: <StarIcon fontSize="small" />, number: "50+", label: "Services Offered" },
+    { icon: <GroupsIcon fontSize="small" />, number: "100%", label: "Client Satisfaction" },
   ];
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden bg-white">
-      {/* Wavy Gradient Background */}
+    <section className="py-10 md:py-12 relative overflow-hidden bg-white">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute -top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 animate-wavyGradient rounded-full opacity-20" />
+        <div className="absolute -top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 animate-wavyGradient rounded-full opacity-10" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          {/* Left Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* Left Section */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center space-x-2 bg-[#df865b]/20 text-[#df865b] px-4 py-2 rounded-full mb-6">
-              <TrendingUpIcon className="h-5 w-5" />
-              <span className="font-semibold">About Our Company</span>
+            <div className="inline-flex items-center space-x-2 bg-[#df865b]/20 text-[#df865b] px-3 py-1 rounded-full mb-3 text-xs font-medium">
+              <TrendingUpIcon fontSize="small" />
+              <span>About Our Company</span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8 text-[#27545b]">
+            <h2 className="text-xl md:text-2xl font-bold text-[#27545b] mb-4 leading-snug">
               About <span className="text-[#df865b]">KUMAR Fin. Consultant</span>
             </h2>
 
-            <div className="space-y-6 mb-10">
-              <p className="text-base md:text-lg leading-relaxed text-[#604235]">
-                Led by <strong className="text-[#df865b]">Pappu Kumar</strong>, our consultancy provides comprehensive
-                financial and legal services to businesses and individuals...
-              </p>
+            <p className="text-sm text-[#604235] mb-2 leading-relaxed">
+              Led by <strong className="text-[#df865b]">Pappu Kumar</strong>, our consultancy provides comprehensive services to individuals & businesses.
+            </p>
+            <p className="text-sm text-[#604235] mb-4 leading-relaxed">
+              From simple PAN applications to tax audits and tender processes, we cover it all.
+            </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-[#604235]">
-                From simple PAN card applications to complex tax audits and government tender processes...
-              </p>
-            </div>
-
-            {/* Stats with animation */}
-            <div className="grid grid-cols-2 gap-6 mb-10">
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-3 mb-4">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ scale: 0.9, opacity: 0 }}
+                  initial={{ scale: 0.95, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.15 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center p-6 bg-white border border-[#df865b] rounded-2xl shadow-md hover:shadow-lg transition"
+                  className="text-center px-3 py-4 bg-white border border-[#df865b] rounded-xl shadow-sm"
                 >
-                  <div className="flex justify-center text-[#df865b] mb-3">{stat.icon}</div>
-                  <div className="text-2xl font-bold text-[#27545b] mb-1">{stat.number}</div>
-                  <div className="text-sm text-[#604235]">{stat.label}</div>
+                  <div className="flex justify-center text-[#df865b] mb-1">{stat.icon}</div>
+                  <div className="text-base font-bold text-[#27545b]">{stat.number}</div>
+                  <div className="text-xs text-[#604235]">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
 
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.2 }}
-            >
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2 }}>
               <Link
                 href="/about"
-                className="bg-gradient-to-r from-[#27545b] to-[#604235] text-white px-8 py-4 rounded-xl font-semibold hover:from-[#604235] hover:to-[#27545b] transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#df865b]/50"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-[#27545b] to-[#604235] text-white px-4 py-2 rounded-md text-sm font-medium hover:from-[#604235] hover:to-[#27545b] shadow-sm hover:shadow-md"
               >
-                📖 Learn More About Us
+                <InfoIcon fontSize="small" />
+                Learn More About Us
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Right Card */}
+          {/* Right Section */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-[#df865b]/30 p-10 border-t-4 border-[#df865b] relative"
+            className="bg-white rounded-xl shadow border border-[#df865b]/30 p-5 relative"
           >
-            <div className="absolute -top-6 left-8 bg-[#df865b] text-white px-6 py-2 rounded-full text-sm font-semibold">
+            <div className="absolute -top-4 left-5 bg-[#df865b] text-white px-4 py-1.5 rounded-full text-xs font-semibold">
               Why Choose Us?
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-bold leading-tight mb-8 text-[#27545b] mt-4">Our Key Strengths</h3>
+            <h3 className="text-lg font-bold text-[#27545b] mt-5 mb-4">Our Key Strengths</h3>
 
-            <ul className="space-y-6">
+            <ul className="space-y-3">
               {highlights.map((highlight, index) => (
                 <motion.li
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.08 }}
                   viewport={{ once: true }}
-                  className="flex items-start space-x-4 group"
+                  className="flex items-start gap-3 group"
                 >
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-white shadow-lg bg-[#27545b] group-hover:bg-[#df865b] transition-colors">
-                    <CheckCircleIcon className="h-6 w-6 text-white" />
+                  <div className="w-8 h-8 rounded-md flex items-center justify-center bg-[#27545b] group-hover:bg-[#df865b] transition-colors">
+                    <CheckCircleIcon className="text-white text-base" fontSize="inherit" />
                   </div>
-                  <div className="flex-1 pt-2">
-                    <span className="text-[#604235] font-semibold group-hover:text-[#df865b] transition-colors">
-                      {highlight}
-                    </span>
-                  </div>
+                  <span className="text-sm text-[#604235] group-hover:text-[#df865b] transition-colors">
+                    {highlight}
+                  </span>
                 </motion.li>
               ))}
             </ul>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="mt-10 p-6 bg-[#27545b]/10 rounded-2xl border-l-4 border-[#27545b]"
+              className="mt-5 p-4 bg-[#27545b]/10 rounded-md border-l-4 border-[#27545b]"
             >
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-[#27545b] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-white text-sm font-bold">"</span>
+              <div className="flex items-start gap-2">
+                <div className="w-6 h-6 bg-[#27545b] rounded-full flex items-center justify-center text-white text-xs font-bold">
+                  "
                 </div>
                 <div>
-                  <p className="text-[#604235] font-medium mb-2">
+                  <p className="text-xs text-[#604235] leading-snug mb-1">
                     "Your success is our priority. We guarantee 100% satisfaction with our professional services."
                   </p>
-                  <p className="text-sm text-[#df865b] font-semibold">- Pappu Kumar, Founder</p>
+                  <p className="text-xs text-[#df865b] font-semibold">- Pappu Kumar, Founder</p>
                 </div>
               </div>
             </motion.div>
@@ -154,7 +145,6 @@ export default function HomeAbout() {
         </div>
       </div>
 
-      {/* Inline keyframes and gradient animation */}
       <style jsx>{`
         @keyframes wavyGradient {
           0% {
