@@ -1,127 +1,149 @@
-'use client'
+"use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance"
-import TrendingUpIcon from "@mui/icons-material/TrendingUp"
-import SecurityIcon from "@mui/icons-material/Security"
-import RocketLaunchIcon from "@mui/icons-material/RocketLaunch"
-import PhoneIcon from "@mui/icons-material/Phone"
+import { Building, TrendingUp, Shield, Rocket, Phone, CheckCircle, Star, Users, Award } from "lucide-react"
 
 export default function HomeHero() {
   return (
-    <section className="relative text-white py-12 lg:py-16 overflow-hidden bg-gradient-to-b from-[#27545b] to-[#19383c] min-h-screen flex items-center">
+    <section className="relative text-white py-12 overflow-hidden bg-gradient-to-br from-[#27545b] to-[#19383c] min-h-screen flex items-center">
+      {/* Minimal Background */}
       <div className="absolute inset-0 bg-black/10"></div>
 
-      <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
-        <div className="absolute top-10 left-10 w-24 h-24 bg-white rounded-full blur-2xl"></div>
-        <div className="absolute bottom-10 right-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white rounded-full blur-3xl"></div>
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Compact Left Content */}
+          <div className="text-center lg:text-left">
+            {/* Compact Trust Badge */}
+            <div className="inline-flex items-center bg-white/10 border border-white/20 rounded-lg px-3 py-1 mb-4">
+              <Award className="h-3 w-3 text-[#df865b] mr-1" />
+              <span className="text-xs font-medium text-white/90">Trusted by 500+ Clients</span>
+            </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
-        >
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-center lg:text-left"
-          >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-              Professional <span className="text-yellow-400">Financial</span> & <span className="text-red-300">Legal</span> Consulting
+            {/* Compact Title */}
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4">
+              Professional <span className="text-[#df865b]">Financial</span> &{" "}
+              <span className="text-[#60a5fa]">Legal</span> Consulting
             </h1>
 
-            <p className="text-base md:text-lg leading-relaxed text-blue-100 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Expert solutions for accounting, taxation, GST compliance, and legal services. Trust KUMAR Fin. Consultant
-              for guaranteed results and professional excellence.
+            {/* Compact Description */}
+            <p className="text-sm md:text-base leading-relaxed text-white/80 mb-6 max-w-xl mx-auto lg:mx-0">
+              Expert solutions for accounting, taxation, GST compliance, and legal services. Professional excellence
+              with guaranteed results.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="py-2">
-                <Link
-                  href="/services"
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-200"
-                >
-                  <RocketLaunchIcon className="inline-block mr-2" /> Explore Services
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="py-2">
-                <Link
-                  href="/contact"
-                  className="border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-lg focus:outline-none focus:ring-4 focus:ring-white/30"
-                >
-                  <PhoneIcon className="inline-block mr-2" /> Get Consultation
-                </Link>
-              </motion.div>
+            {/* Compact CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-6">
+              <Link
+                href="/services"
+                className="bg-[#df865b] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#c67549] transition-all duration-200 shadow-md text-sm"
+              >
+                <Rocket className="inline-block mr-2 h-4 w-4" />
+                Explore Services
+              </Link>
+              <Link
+                href="/contact"
+                className="border border-white/30 text-white px-6 py-2 rounded-lg font-semibold hover:bg-white hover:text-[#27545b] transition-all duration-200 shadow-md text-sm"
+              >
+                <Phone className="inline-block mr-2 h-4 w-4" />
+                Get Consultation
+              </Link>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto lg:mx-0">
+            {/* Compact Features */}
+            <div className="grid grid-cols-2 gap-2 max-w-sm mx-auto lg:mx-0">
               {[
-                { label: "24/7 Available", color: "bg-green-400" },
-                { label: "Quick Response", color: "bg-yellow-400" },
-                { label: "Expert Team", color: "bg-red-400" },
-                { label: "100% Satisfaction", color: "bg-purple-400" },
+                { label: "24/7 Available", icon: <CheckCircle className="h-3 w-3" />, color: "text-green-400" },
+                { label: "Quick Response", icon: <Star className="h-3 w-3" />, color: "text-yellow-400" },
+                { label: "Expert Team", icon: <Users className="h-3 w-3" />, color: "text-blue-400" },
+                { label: "100% Satisfaction", icon: <Award className="h-3 w-3" />, color: "text-purple-400" },
               ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 + i * 0.1, duration: 0.4 }}
-                  className="flex items-center space-x-2 text-blue-100"
-                >
-                  <div className={`w-2 h-2 ${item.color} rounded-full`}></div>
-                  <span className="font-medium text-sm">{item.label}</span>
-                </motion.div>
+                <div key={i} className="flex items-center space-x-2 bg-white/5 border border-white/10 rounded-md p-2">
+                  <div className={`${item.color}`}>{item.icon}</div>
+                  <span className="font-medium text-xs text-white/90">{item.label}</span>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="grid grid-cols-2 gap-4"
-          >
+          {/* Compact Right Content */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               {
                 title: "Expert Accounting",
-                desc: "Professional accounting with accuracy",
-                icon: <AccountBalanceIcon className="h-6 w-6 text-white" />,
-                bg: "bg-blue-500",
+                desc: "Professional accounting services with accuracy and compliance",
+                icon: <Building className="h-5 w-5 text-white" />,
+                bg: "bg-[#3b82f6]",
+                stats: "500+ Clients",
               },
               {
                 title: "Tax Planning",
-                desc: "Strategic tax solutions to save more",
-                icon: <TrendingUpIcon className="h-6 w-6 text-white" />,
-                bg: "bg-red-500",
+                desc: "Strategic tax solutions to maximize savings",
+                icon: <TrendingUp className="h-5 w-5 text-white" />,
+                bg: "bg-[#ef4444]",
+                stats: "₹10L+ Saved",
               },
               {
                 title: "Legal Compliance",
-                desc: "Complete legal and regulatory compliance",
-                icon: <SecurityIcon className="h-6 w-6 text-white" />,
-                bg: "bg-purple-500",
-                span: "col-span-2",
+                desc: "Complete legal and regulatory compliance services",
+                icon: <Shield className="h-5 w-5 text-white" />,
+                bg: "bg-[#8b5cf6]",
+                span: "sm:col-span-2",
+                stats: "100% Success",
               },
             ].map((card, i) => (
-              <motion.div
+              <div
                 key={i}
-                whileHover={{ y: -5 }}
-                className={`text-center p-5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 ${card.span || ""}`}
+                className={`p-4 rounded-lg bg-white/10 border border-white/20 hover:bg-white/15 transition-all duration-200 ${card.span || ""}`}
               >
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${card.bg} mx-auto mb-3`}>
-                  {card.icon}
+                {/* Compact Card Header */}
+                <div className="flex items-center justify-between mb-3">
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${card.bg}`}>{card.icon}</div>
+                  <div className="text-right">
+                    <div className="text-xs font-bold text-[#df865b]">{card.stats}</div>
+                  </div>
                 </div>
-                <h3 className="text-sm font-bold mb-2 text-white">{card.title}</h3>
-                <p className="text-blue-100 text-xs leading-relaxed">{card.desc}</p>
-              </motion.div>
+
+                {/* Compact Card Content */}
+                <div className="text-left">
+                  <h3 className="text-sm font-bold mb-1 text-white">{card.title}</h3>
+                  <p className="text-white/70 text-xs leading-relaxed">{card.desc}</p>
+                </div>
+
+                {/* Compact Rating */}
+                <div className="mt-2 pt-2 border-t border-white/10">
+                  <div className="flex items-center justify-between text-xs text-white/60">
+                    <span>Professional</span>
+                    <div className="flex items-center space-x-0.5">
+                      {[...Array(5)].map((_, idx) => (
+                        <Star key={idx} className="h-2 w-2 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
+
+        {/* Compact Bottom Stats */}
+        <div className="mt-8 pt-4 border-t border-white/10">
+          <div className="grid grid-cols-4 gap-4 text-center">
+            {[
+              { number: "10+", label: "Years", icon: <Award className="h-4 w-4" /> },
+              { number: "500+", label: "Clients", icon: <Users className="h-4 w-4" /> },
+              { number: "24/7", label: "Support", icon: <Phone className="h-4 w-4" /> },
+              { number: "100%", label: "Success", icon: <Star className="h-4 w-4" /> },
+            ].map((stat, i) => (
+              <div key={i} className="group">
+                <div className="flex items-center justify-center mb-1">
+                  <div className="text-[#df865b] mr-1">{stat.icon}</div>
+                  <div className="text-xl font-bold text-white">{stat.number}</div>
+                </div>
+                <div className="text-white/70 text-xs font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )
