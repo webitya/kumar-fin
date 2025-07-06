@@ -1,6 +1,5 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import BusinessIcon from '@mui/icons-material/Business';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
@@ -10,8 +9,8 @@ export default function ServicesGrid() {
   const serviceCategories = [
     {
       title: 'Accounting & Taxation',
-      icon: <ReceiptIcon className="h-12 w-12 text-[#df865b]" />,
-      description: 'Complete accounting and taxation services for individuals and businesses',
+      icon: <ReceiptIcon className="h-8 w-8 text-[#df865b]" />,
+      description: 'Comprehensive accounting and taxation services tailored for individuals and businesses.',
       services: [
         'PAN Card Application & Services',
         'Professional Accounting & Bookkeeping',
@@ -23,8 +22,8 @@ export default function ServicesGrid() {
     },
     {
       title: 'GST Services',
-      icon: <BusinessIcon className="h-12 w-12 text-[#df865b]" />,
-      description: 'Comprehensive GST solutions and compliance management',
+      icon: <BusinessIcon className="h-8 w-8 text-[#df865b]" />,
+      description: 'End-to-end GST registration, filing, audit, and advisory solutions.',
       services: [
         'GST Registration & Setup',
         'GST Return Filing (GSTR-1, GSTR-3B)',
@@ -36,30 +35,27 @@ export default function ServicesGrid() {
     },
     {
       title: 'Other Professional Services',
-      icon: <VerifiedUserIcon className="h-12 w-12 text-[#df865b]" />,
-      description: 'Wide range of professional and legal services',
+      icon: <VerifiedUserIcon className="h-8 w-8 text-[#df865b]" />,
+      description: 'A broad spectrum of professional certifications, registrations, and compliance services.',
       services: [
         'DSC (Digital Signature Certificate)',
-        'EPF Registration & Return Filing',
-        'ESI Registration & Return Filing',
+        'EPF & ESI Registration & Return Filing',
         'Trade Mark Registration',
-        'ISO Certificate Processing',
-        'NGO/Society/Trust/Section 8 Registration',
-        'Legal/Notary Services',
+        'ISO Certification Assistance',
+        'NGO / Society / Trust Registration',
         'FSSAI License & Registration',
+        'Legal & Notary Services',
         'Drafting License & Support',
-        'Trade License Processing',
         'MSME / Udyam Registration',
         'Regulatory Compliance',
       ],
     },
     {
       title: 'Tender Services',
-      icon: <AssignmentIcon className="h-12 w-12 text-[#df865b]" />,
-      description: 'Expert assistance with government and private tenders',
+      icon: <AssignmentIcon className="h-8 w-8 text-[#df865b]" />,
+      description: 'Expert guidance for successful tender applications and documentation.',
       services: [
-        'Central Government Tender Support',
-        'State Government Tender Assistance',
+        'Government Tender Support',
         'GEM Portal Registration & Bidding',
         'Coal E-Auction Services',
         'Railway Tender Processing',
@@ -70,73 +66,39 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section className="relative py-20 overflow-hidden text-white">
-      {/* Animated Conic Gradient Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full animate-spin-slower bg-[conic-gradient(at_center,_#27545b,_#604235,_#df865b,_#27545b)] opacity-40" />
-      </div>
+    <section className="relative py-16 overflow-hidden bg-[#f8f8f8] text-[#333]">
 
-      {/* Blur Overlay for readability */}
-      <div className="absolute inset-0 z-0 bg-white/70 backdrop-blur-sm" />
+      <div className="absolute inset-0 z-0 bg-[conic-gradient(at_center,_#27545b,_#604235,_#df865b,_#27545b)] opacity-10" />
+      <div className="absolute inset-0 z-0 bg-white/80 backdrop-blur-md" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.2,
-              },
-            },
-          }}
-        >
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-5 lg:px-6">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10 text-[#333]">
+          Our Service Categories
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {serviceCategories.map((category, index) => (
-            <motion.div
+            <div
               key={index}
-              className="bg-[#27545b] text-white p-8 rounded-xl shadow-lg hover:scale-[1.02] transition-transform duration-300"
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.5 }}
+              className="bg-white border border-gray-200 text-[#444] p-5 rounded-xl hover:shadow-md transition-all duration-200"
             >
-              <div className="flex items-center mb-6">
+              <div className="flex items-center mb-4">
                 {category.icon}
-                <h3 className="text-2xl font-bold ml-4 text-[#df865b]">{category.title}</h3>
+                <h3 className="text-lg font-semibold ml-3 text-[#27545b]">{category.title}</h3>
               </div>
-              <p className="mb-6 text-white/90">{category.description}</p>
-              <ul className="space-y-3">
+              <p className="mb-4 text-sm text-[#555] leading-relaxed">{category.description}</p>
+              <ul className="space-y-2 text-sm text-[#555]">
                 {category.services.map((service, idx) => (
                   <li key={idx} className="flex items-start">
-                    <span className="w-2 h-2 bg-[#df865b] mt-2 mr-3 rounded-full flex-shrink-0"></span>
-                    <span className="text-white/90">{service}</span>
+                    <span className="mt-1.5 mr-2 w-2 h-2 rounded-full bg-[#df865b] flex-shrink-0"></span>
+                    <span>{service}</span>
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
-
-      {/* Keyframes for Animation */}
-      <style jsx>{`
-        @keyframes spin-slower {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-
-        .animate-spin-slower {
-          animation: spin-slower 40s linear infinite;
-        }
-      `}</style>
     </section>
   );
 }

@@ -1,35 +1,34 @@
-'use client';
+"use client";
 
 export default function ServicesHero() {
   return (
     <>
-      <section className="relative overflow-hidden text-white py-20">
-        {/* Animated Gradient Background */}
-        <div className="absolute inset-0 z-0 animate-wavyGradient bg-[conic-gradient(at_top_left,_#27545b,_#604235,_#df865b,_#27545b)] opacity-90 blur-sm" />
+      <section className="relative overflow-hidden text-white py-10 md:py-12">
+        {/* Subtle Animated Background */}
+        <div className="absolute inset-0 z-0 bg-[conic-gradient(at_top_left,_#27545b,_#604235,_#df865b,_#27545b)] opacity-80 animate-wavyGradient" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#df865b]">
-            Our Professional Services
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6 text-[#df865b]">
+            Elevate Your Business with Our Expert Services
           </h1>
-          <p className="text-xl text-[#ffffff] max-w-3xl mx-auto mb-12">
-            Comprehensive financial and legal solutions designed to meet all your business and personal requirements
+          <p className="text-base md:text-lg text-white/90 max-w-3xl mx-auto mb-10">
+            We provide comprehensive financial, taxation, legal, and tender solutions designed to support businesses and individuals with professionalism, accuracy, and dedication.
           </p>
         </div>
 
-        {/* Marquee */}
-        <div className="absolute bottom-0 w-full overflow-hidden whitespace-nowrap z-10">
-          <div className="animate-marquee text-[#ffffffcc] text-lg font-medium inline-block min-w-full">
-            <span className="inline-block px-12">
-              Accounting • Taxation • GST Compliance • Legal Docs • Government Tender Support • Financial Advice •
+        {/* Clean Marquee */}
+        <div className="absolute bottom-4 w-full overflow-hidden z-10">
+          <div className="animate-marquee text-white/80 text-sm md:text-base font-medium whitespace-nowrap">
+            <span className="inline-block px-8">
+              Accounting & Taxation • GST Compliance • Legal Documentation • Tender Support • Business Advisory •
             </span>
-            <span className="inline-block px-12">
-              Accounting • Taxation • GST Compliance • Legal Docs • Government Tender Support • Financial Advice •
+            <span className="inline-block px-8">
+              Accounting & Taxation • GST Compliance • Legal Documentation • Tender Support • Business Advisory •
             </span>
           </div>
         </div>
       </section>
 
-      {/* Embedded Styles */}
       <style jsx>{`
         @keyframes marquee {
           0% {
@@ -53,12 +52,12 @@ export default function ServicesHero() {
         }
 
         .animate-marquee {
-          animation: marquee 20s linear infinite;
+          animation: marquee 18s linear infinite;
         }
 
         .animate-wavyGradient {
-          background-size: 200% 200%;
-          animation: wavyGradient 15s ease-in-out infinite;
+          background-size: 250% 250%;
+          animation: wavyGradient 20s ease-in-out infinite;
         }
       `}</style>
     </>

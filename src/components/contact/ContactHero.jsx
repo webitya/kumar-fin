@@ -1,35 +1,225 @@
-'use client';
+"use client"
 
-import { motion } from 'framer-motion';
+import { Phone, Mail, MapPin, Clock, Building2, Send, User, MessageSquare } from "lucide-react"
 
-export default function ContactHero() {
+export default function CreativeContactPage() {
+  const contactDetails = [
+    {
+      icon: <Phone className="h-5 w-5 text-white" />,
+      title: "Phone",
+      details: ["+91 XXXXX XXXXX", "+91 XXXXX XXXXX"],
+      bgColor: "bg-gradient-to-br from-[#27545b] to-[#1e3f44]",
+    },
+    {
+      icon: <Mail className="h-5 w-5 text-white" />,
+      title: "Email",
+      details: ["info@kumarfin.com", "contact@kumarfin.com"],
+      bgColor: "bg-gradient-to-br from-[#df865b] to-[#c67549]",
+    },
+    {
+      icon: <MapPin className="h-5 w-5 text-white" />,
+      title: "Address",
+      details: ["Your Business Address", "City, State - PIN Code"],
+      bgColor: "bg-gradient-to-br from-[#604235] to-[#4a332a]",
+    },
+    {
+      icon: <Clock className="h-5 w-5 text-white" />,
+      title: "Hours",
+      details: ["Mon–Fri: 9AM–6PM", "Sat: 9AM–2PM"],
+      bgColor: "bg-gradient-to-br from-[#27545b] to-[#604235]",
+    },
+  ]
+
   return (
-    <section className="relative py-20 bg-[#27545b] text-[#df865b]">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="w-full h-full bg-gradient-to-br from-[#27545b] via-[#604235] to-[#df865b] opacity-10 blur-2xl" />
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      {/* Hero Section */}
+      <section className="relative py-20 bg-gradient-to-r from-[#27545b] via-[#604235] to-[#df865b] overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#df865b]/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center mb-6">
+            <Building2 className="h-8 w-8 text-[#df865b] mr-3" />
+            <h1 className="text-4xl md:text-5xl font-bold text-white">
+              Get In <span className="text-[#df865b]">Touch</span>
+            </h1>
+          </div>
+          <p className="text-xl max-w-3xl mx-auto text-white/90 leading-relaxed">
+            Ready to transform your financial future? Let's discuss your goals and create a personalized strategy
+            together.
+          </p>
+        </div>
+      </section>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h1
-          className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-md"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-        >
-          Contact Us
-        </motion.h1>
+      {/* Main Content */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Left Side - Compact Contact Form */}
+            <div className="relative">
+              <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-[#df865b]/20 to-[#27545b]/20 rounded-2xl blur-xl"></div>
+              <div className="relative bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
+                {/* Compact Header */}
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#df865b] to-[#c67549] rounded-full mb-3">
+                    <MessageSquare className="h-6 w-6 text-white" />
+                  </div>
+                  <h2 className="text-xl font-bold text-gray-800 mb-1">Send us a Message</h2>
+                  <p className="text-gray-600 text-sm">
+                    We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                  </p>
+                </div>
 
-        <motion.p
-          className="text-xl max-w-3xl mx-auto text-[#ffffff] drop-shadow-sm"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
-        >
-          <div>Hello piysuh</div>
-          Get in touch with our expert team for professional consultation and personalized solutions for all your
-          financial and legal requirements.
-        </motion.p>
-      </div>
-    </section>
-  );
+                {/* Compact Form */}
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                      <input
+                        type="text"
+                        placeholder="Full Name"
+                        className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white text-sm"
+                      />
+                    </div>
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                      <input
+                        type="email"
+                        placeholder="Email Address"
+                        className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="relative">
+                    <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white text-sm"
+                    />
+                  </div>
+
+                  <div className="relative">
+                    <select className="w-full px-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white appearance-none text-sm">
+                      <option value="">Select Service</option>
+                      <option value="financial-planning">Financial Planning</option>
+                      <option value="tax-consultation">Tax Consultation</option>
+                      <option value="legal-advice">Legal Advice</option>
+                      <option value="business-consultation">Business Consultation</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div className="relative">
+                    <MessageSquare className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <textarea
+                      placeholder="Tell us about your requirements..."
+                      rows="3"
+                      className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white resize-none text-sm"
+                    ></textarea>
+                  </div>
+
+                  <button className="w-full bg-gradient-to-r from-[#df865b] to-[#c67549] text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center group">
+                    <Send className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            {/* Right Side - Compact Contact Details */}
+            <div className="space-y-4">
+              {/* Compact Company Header */}
+              <div className="bg-gradient-to-br from-[#27545b] to-[#1e3f44] p-6 rounded-xl text-white shadow-lg">
+                <div className="flex items-center mb-3">
+                  <div className="w-10 h-10 bg-[#df865b] rounded-lg flex items-center justify-center mr-3">
+                    <Building2 className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-bold">KUMAR Fin. Consultant</h2>
+                    <p className="text-white/80 text-sm">Pappu Kumar Consultant</p>
+                  </div>
+                </div>
+                <p className="text-white/90 text-sm leading-relaxed">
+                  Professional financial and legal consulting with personalized solutions for your success.
+                </p>
+              </div>
+
+              {/* Compact Contact Cards - 2x2 Grid */}
+              <div className="grid grid-cols-2 gap-3">
+                {contactDetails.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`${item.bgColor} p-4 rounded-lg text-white shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 cursor-pointer`}
+                  >
+                    <div className="flex items-center mb-2">
+                      <div className="w-8 h-8 bg-white/20 rounded-md flex items-center justify-center mr-2">
+                        {item.icon}
+                      </div>
+                      <h3 className="text-sm font-semibold">{item.title}</h3>
+                    </div>
+                    <div className="space-y-0.5">
+                      {item.details.map((detail, i) => (
+                        <p key={i} className="text-white/90 text-xs leading-tight">
+                          {detail}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Compact Service Guarantee */}
+              <div className="bg-gradient-to-br from-[#604235] to-[#4a332a] p-5 rounded-xl text-white shadow-lg">
+                <div className="flex items-center mb-3">
+                  <div className="w-8 h-8 bg-[#df865b] rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-xs font-bold">✓</span>
+                  </div>
+                  <h3 className="text-lg font-bold">Our Promise</h3>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-[#df865b] rounded-full mr-2"></div>
+                    <span className="text-xs">Free Consultation</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-[#df865b] rounded-full mr-2"></div>
+                    <span className="text-xs">24hr Response</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-[#df865b] rounded-full mr-2"></div>
+                    <span className="text-xs">Expert Guidance</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-[#df865b] rounded-full mr-2"></div>
+                    <span className="text-xs">Confidential</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="bg-white p-4 rounded-xl shadow-md border border-gray-100">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-2xl font-bold text-[#27545b]">10+</div>
+                    <div className="text-xs text-gray-600">Years Experience</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-[#df865b]">500+</div>
+                    <div className="text-xs text-gray-600">Happy Clients</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-[#604235]">24/7</div>
+                    <div className="text-xs text-gray-600">Support</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
 }
