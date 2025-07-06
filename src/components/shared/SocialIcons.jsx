@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { useState } from "react"
 import PhoneIcon from "@mui/icons-material/Phone"
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"
@@ -14,76 +14,78 @@ export default function SocialIcons() {
   const socialLinks = [
     {
       name: "Phone",
-      icon: <PhoneIcon className="h-6 w-6" />,
+      icon: <PhoneIcon className="h-3 w-3" />,
       href: "tel:+919876543210",
-      bgColor: "bg-green-600 hover:bg-green-700",
-      label: "Call Us",
+      bgColor: "bg-[#34A853] hover:brightness-110",
     },
     {
       name: "WhatsApp",
-      icon: <WhatsAppIcon className="h-6 w-6" />,
+      icon: <WhatsAppIcon className="h-3 w-3" />,
       href: "https://wa.me/919876543210",
-      bgColor: "bg-green-500 hover:bg-green-600",
-      label: "WhatsApp",
+      bgColor: "bg-[#25D366] hover:brightness-110",
     },
     {
       name: "Facebook",
-      icon: <FacebookIcon className="h-6 w-6" />,
+      icon: <FacebookIcon className="h-3 w-3" />,
       href: "https://facebook.com/kumarfinconsultant",
-      bgColor: "bg-blue-600 hover:bg-blue-700",
-      label: "Facebook",
+      bgColor: "bg-[#1877F2] hover:brightness-110",
     },
     {
       name: "Instagram",
-      icon: <InstagramIcon className="h-6 w-6" />,
+      icon: <InstagramIcon className="h-3 w-3" />,
       href: "https://instagram.com/kumarfinconsultant",
-      bgColor: "bg-purple-600 hover:bg-purple-700",
-      label: "Instagram",
+      bgColor: "bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 hover:brightness-110",
     },
     {
       name: "X (Twitter)",
-      icon: <XIcon className="h-6 w-6" />,
+      icon: <XIcon className="h-3 w-3" />,
       href: "https://x.com/kumarfinconsult",
-      bgColor: "bg-black hover:bg-gray-800",
-      label: "Follow on X",
+      bgColor: "bg-black hover:brightness-110",
     },
   ]
 
   return (
-    <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-40">
-      <div className="flex flex-col items-center space-y-3">
+    <div className="fixed bottom-5 right-5 z-50">
+      <div className="flex flex-col items-center space-y-1">
+
         {/* Toggle Button */}
-        <button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="w-14 h-14 rounded-full flex items-center justify-center text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 focus:outline-none focus:ring-4 focus:ring-white/30 bg-blue-600 hover:bg-blue-700"
-          aria-label="Toggle social menu"
-        >
-          {isExpanded ? <CloseIcon className="h-6 w-6" /> : <ChatIcon className="h-6 w-6" />}
-        </button>
+        {!isExpanded && (
+          <button
+            onClick={() => setIsExpanded(true)}
+            className="w-8 h-8 rounded-md flex items-center justify-center text-white bg-blue-600 hover:bg-blue-700 transition"
+            aria-label="Open social menu"
+          >
+            <ChatIcon className="h-3 w-3" />
+          </button>
+        )}
 
         {/* Social Icons */}
         {isExpanded && (
-          <div className="flex flex-col space-y-3">
-            {socialLinks.map((social, index) => (
+          <div className="flex flex-col items-center space-y-1">
+            {socialLinks.map((social) => (
               <a
                 key={social.name}
                 href={social.href}
                 target={social.href.startsWith("http") ? "_blank" : "_self"}
                 rel={social.href.startsWith("http") ? "noopener noreferrer" : ""}
-                className={`w-14 h-14 rounded-full flex items-center justify-center text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 focus:outline-none focus:ring-4 focus:ring-white/30 ${social.bgColor} group relative`}
-                aria-label={social.label}
+                className={`w-8 h-8 rounded-md flex items-center justify-center text-white ${social.bgColor} hover:scale-105 transition`}
+                aria-label={social.name}
               >
                 {social.icon}
-
-                {/* Tooltip */}
-                <div className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
-                  {social.label}
-                  <div className="absolute left-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-l-gray-900"></div>
-                </div>
               </a>
             ))}
+
+            {/* Close Button */}
+            <button
+              onClick={() => setIsExpanded(false)}
+              className="w-8 h-8 rounded-md flex items-center justify-center text-white bg-gray-600 hover:bg-gray-700 transition"
+              aria-label="Close social menu"
+            >
+              <CloseIcon className="h-3 w-3" />
+            </button>
           </div>
         )}
+
       </div>
     </div>
   )
