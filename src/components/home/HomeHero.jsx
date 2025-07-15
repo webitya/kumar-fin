@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Building, TrendingUp, Shield, Rocket, Phone, CheckCircle, Star, Users, Award } from "lucide-react"
+import { Building, TrendingUp, Shield, Rocket, Phone, CheckCircle, Star, Users, Award, FileText } from "lucide-react"
 
 export default function HomeHero() {
   return (
@@ -27,8 +27,7 @@ export default function HomeHero() {
 
             {/* Compact Description */}
             <p className="text-sm md:text-base leading-relaxed text-white/80 mb-6 max-w-xl mx-auto lg:mx-0">
-              Expert solutions for accounting, taxation, GST compliance, and legal services. Professional excellence
-              with guaranteed results.
+             Expert Solutions for Accounting, Taxation, GST Compliance, and Legal Services. Professional Excellence with Guaranteed Results.
             </p>
 
             {/* Compact CTA Buttons */}
@@ -69,11 +68,11 @@ export default function HomeHero() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               {
-                title: "Expert Accounting",
-                desc: "Professional accounting services with accuracy and compliance",
-                icon: <Building className="h-5 w-5 text-white" />,
+                title: "Tender Apply",
+                desc: "Central/State Govt Tender Submission, GEM Portal Assistance & More",
+                icon: <FileText className="h-5 w-5 text-white" />,
                 bg: "bg-[#3b82f6]",
-                stats: "500+ Clients",
+                stats: "1000+ Tenders Filed",
               },
               {
                 title: "Tax Planning",
@@ -82,12 +81,20 @@ export default function HomeHero() {
                 bg: "bg-[#ef4444]",
                 stats: "₹10L+ Saved",
               },
-              {
+             
+                {
+                title: "Expert Accounting",
+                desc: "Professional accounting services with accuracy and compliance",
+                icon: <Building className="h-5 w-5 text-white" />,
+                bg: "bg-[#3b82f6]",
+                stats: "500+ Clients",
+              },
+               {
                 title: "Legal Compliance",
                 desc: "Complete legal and regulatory compliance services",
                 icon: <Shield className="h-5 w-5 text-white" />,
                 bg: "bg-[#8b5cf6]",
-                span: "sm:col-span-2",
+                // span: "sm:col-span-2",
                 stats: "100% Success",
               },
             ].map((card, i) => (
@@ -129,7 +136,7 @@ export default function HomeHero() {
         <div className="mt-8 pt-4 border-t border-white/10">
           <div className="grid grid-cols-4 gap-4 text-center">
             {[
-              { number: "10+", label: "Years", icon: <Award className="h-4 w-4" /> },
+              { number: "11+", label: "Years", icon: <Award className="h-4 w-4" /> },
               { number: "500+", label: "Clients", icon: <Users className="h-4 w-4" /> },
               { number: "24/7", label: "Support", icon: <Phone className="h-4 w-4" /> },
               { number: "100%", label: "Success", icon: <Star className="h-4 w-4" /> },

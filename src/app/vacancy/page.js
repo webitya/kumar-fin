@@ -209,7 +209,7 @@ export default function CareersPage() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 7488380079"
                     />
                   </div>
                   <div>

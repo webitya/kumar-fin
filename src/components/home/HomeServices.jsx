@@ -6,6 +6,15 @@ import { Receipt, Building2, Scale, FileText, ArrowRight, CheckCircle, Search, M
 export default function HomeServices() {
   const services = [
     {
+      icon: <FileText className="h-5 w-5 text-white" />,
+      title: "Tender Services",
+      description: "Expert assistance with government tenders and procurement processes.",
+      features: ["Central Govt", "State Govt", "GEM Portal", "Railway"],
+      bgColor: "bg-[#27545b]",
+      badge: "Specialized",
+      badgeColor: "bg-[#df865b]",
+    },
+    {
       icon: <Receipt className="h-5 w-5 text-white" />,
       title: "Accounting & Taxation",
       description: "Complete accounting solutions, ITR filing, tax audit, and strategic tax planning services.",
@@ -32,15 +41,7 @@ export default function HomeServices() {
       badge: "Professional",
       badgeColor: "bg-[#df865b]",
     },
-    {
-      icon: <FileText className="h-5 w-5 text-white" />,
-      title: "Tender Services",
-      description: "Expert assistance with government tenders and procurement processes.",
-      features: ["Central Govt", "State Govt", "GEM Portal", "Railway"],
-      bgColor: "bg-[#27545b]",
-      badge: "Specialized",
-      badgeColor: "bg-[#df865b]",
-    },
+    
   ]
 
   return (
