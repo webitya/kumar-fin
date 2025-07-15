@@ -53,7 +53,7 @@ export default function HomeAbout() {
             </h2>
 
             <p className="text-sm text-[#604235] mb-2 leading-relaxed">
-              Led by <strong className="text-[#df865b]">Pappu Kumar</strong>, our consultancy provides comprehensive services to individuals & businesses.
+              Led by <strong className="text-[#df865b]">Pappu Kumar Gupta</strong>, our consultancy provides comprehensive services to individuals & businesses.
             </p>
             <p className="text-sm text-[#604235] mb-4 leading-relaxed">
               From simple PAN applications to tax audits and tender processes, we cover it all.
@@ -137,7 +137,7 @@ export default function HomeAbout() {
                   <p className="text-xs text-[#604235] leading-snug mb-1">
                     "Your success is our priority. We guarantee 100% satisfaction with our professional services."
                   </p>
-                  <p className="text-xs text-[#df865b] font-semibold">- Pappu Kumar, Founder</p>
+                  <p className="text-xs text-[#df865b] font-semibold">- Pappu Kumar Gupta, Founder</p>
                 </div>
               </div>
             </motion.div>

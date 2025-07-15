@@ -32,7 +32,7 @@ export default function Header() {
               <h1 className="text-base lg:text-lg font-bold text-black group-hover:text-gray-700 transition-colors">
                 Kumar Fin Consultant
               </h1>
-              <p className="text-xs text-gray-500 hidden sm:block">Pappu Kumar Consultant</p>
+              <p className="text-xs text-gray-500 hidden sm:block">Pappu Kumar Gupta</p>
             </div>
           </Link>
 
@@ -55,7 +55,7 @@ export default function Header() {
               className="ml-3 flex items-center space-x-2 bg-[#27545b] text-white px-4 py-2 rounded-lg text-sm font-semibold shadow hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#27545b]"
             >
               <PhoneIcon className="h-4 w-4" />
-              <span className="hidden xl:inline">+91 98765 43210</span>
+              <span className="hidden xl:inline">+91 7488380079</span>
               <span className="xl:hidden">Call Now</span>
             </motion.a>
           </nav>
@@ -99,7 +99,7 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <PhoneIcon className="h-4 w-4" />
-                  <span>Call +91 98765 43210</span>
+                  <span>Call +91 7488380079</span>
                 </motion.a>
               </nav>
             </motion.div>

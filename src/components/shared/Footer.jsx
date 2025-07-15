@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -20,6 +20,61 @@ const fadeUp = {
   }),
 }
 
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
+]
+
+const policyLinks = [
+  { label: "Privacy Policy", href: "/privacypolicy" },
+  { label: "Terms of Service", href: "/termsofservice" },
+  { label: "Sitemap", href: "/sitemap" },
+]
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    href: "https://facebook.com/kumarfinconsultant",
+    icon: <FacebookIcon className="text-[#1877F2]" />,
+    bg: "bg-white",
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com/kumarfinconsultant",
+    icon: <InstagramIcon className="text-[#E1306C]" />,
+    bg: "bg-white",
+  },
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/919876543210",
+    icon: <WhatsAppIcon className="text-[#25D366]" />,
+    bg: "bg-white",
+  },
+  {
+    name: "X",
+    href: "https://x.com/kumarfinconsult",
+    icon: <XIcon className="text-black" />,
+    bg: "bg-white",
+  },
+]
+
+const contactInfo = [
+  {
+    icon: <PhoneIcon className="text-[#34A853]" />,
+    text: "+91 7488380079",
+  },
+  {
+    icon: <EmailIcon className="text-[#DB4437]" />,
+    text: "kumarfinconsultant@gmail.com",
+  },
+  {
+    icon: <LocationOnIcon className="text-[#4285F4]" />,
+    text: "1st Floor, Raj Complex, Kanke Road, Opposite Speaker House 834008",
+  },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white relative overflow-hidden">
@@ -30,32 +85,39 @@ export default function Footer() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-4 gap-10"
         >
+          {/* Logo & About */}
           <motion.div variants={fadeUp} className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-5">
               <div className="p-3 bg-black rounded-xl">
-                <Image src="/logo.png" alt="Company Logo" width={70} height={70} className="rounded-lg" />
+                <Image
+                  src="/logo.png"
+                  alt="Company Logo"
+                  width={70}
+                  height={70}
+                  className="rounded-lg"
+                />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-[#df865b] leading-tight">KUMAR Fin. Consultant</h3>
-                <p className="text-gray-300 text-sm">Pappu Kumar Consultant</p>
+                <h3 className="text-2xl font-bold text-[#df865b] leading-tight">
+                  KUMAR Fin. Consultant
+                </h3>
+                <p className="text-gray-300 text-sm">Pappu Kumar Gupta</p>
               </div>
             </div>
 
             <p className="text-gray-400 mb-6 leading-relaxed text-sm">
-              Expert financial and legal consulting services in taxation, GST, accounting & compliance. Trusted by businesses and individuals for results-driven solutions.
+              Expert Financial and Legal Consulting Services in Taxation, GST,
+              Accounting & Compliance. Trusted by Businesses and Individuals for
+              results-driven solutions.
             </p>
 
             <div className="flex space-x-3">
-              {[
-                { href: "https://facebook.com/kumarfinconsultant", icon: <FacebookIcon className="text-[#1877F2]" />, bg: "bg-white" },
-                { href: "https://instagram.com/kumarfinconsultant", icon: <InstagramIcon className="text-[#E1306C]" />, bg: "bg-white" },
-                { href: "https://wa.me/919876543210", icon: <WhatsAppIcon className="text-[#25D366]" />, bg: "bg-white" },
-                { href: "https://x.com/kumarfinconsult", icon: <XIcon className="text-black" />, bg: "bg-white" },
-              ].map(({ href, icon, bg }, i) => (
+              {socialLinks.map(({ href, icon, bg }, i) => (
                 <motion.a
                   key={i}
                   href={href}
                   target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.95 }}
                   className={`w-10 h-10 rounded-lg flex items-center justify-center ${bg} transition-all`}
@@ -66,31 +128,29 @@ export default function Footer() {
             </div>
           </motion.div>
 
+          {/* Quick Links */}
           <motion.div variants={fadeUp} custom={1}>
             <h4 className="text-lg font-semibold mb-5 text-[#df865b]">Quick Links</h4>
             <ul className="space-y-3 text-sm">
-              {["Home", "About Us", "Services", "Contact Us"].map((text, idx) => (
+              {quickLinks.map(({ label, href }, idx) => (
                 <li key={idx}>
                   <Link
-                    href={`/${text.toLowerCase().replace(/\s+/g, "")}`}
+                    href={href}
                     className="group flex items-center hover:text-[#df865b] transition-colors"
                   >
                     <span className="w-2 h-2 bg-[#27545b] rounded-full mr-3 group-hover:bg-[#df865b]"></span>
-                    {text}
+                    {label}
                   </Link>
                 </li>
               ))}
             </ul>
           </motion.div>
 
+          {/* Contact Info */}
           <motion.div variants={fadeUp} custom={2}>
             <h4 className="text-lg font-semibold mb-5 text-[#df865b]">Contact Info</h4>
             <ul className="space-y-4 text-sm text-gray-300">
-              {[
-                { icon: <PhoneIcon className="text-[#34A853]" />, text: "+91 98765 43210" },
-                { icon: <EmailIcon className="text-[#DB4437]" />, text: "info@kumarfin.com" },
-                { icon: <LocationOnIcon className="text-[#4285F4]" />, text: "Your Business Address, City, State" },
-              ].map((item, i) => (
+              {contactInfo.map((item, i) => (
                 <li key={i} className="flex items-start space-x-3 group">
                   <div className="p-2 bg-white rounded-lg mt-1">
                     {item.icon}
@@ -104,6 +164,7 @@ export default function Footer() {
           </motion.div>
         </motion.div>
 
+        {/* Footer Bottom with Webitya Credit */}
         <motion.div
           variants={fadeUp}
           custom={4}
@@ -114,16 +175,26 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p>© {new Date().getFullYear()} KUMAR Fin. Consultant. All rights reserved.</p>
-            <div className="flex space-x-5">
-              {["Privacy Policy", "Terms of Service", "Sitemap"].map((text, i) => (
-                <Link
-                  key={i}
-                  href={`/${text.toLowerCase().replace(/\s+/g, "")}`}
-                  className="hover:text-[#df865b] transition-colors"
-                >
-                  {text}
-                </Link>
-              ))}
+            <div className="flex flex-col md:flex-row md:items-center md:space-x-5 space-y-2 md:space-y-0 text-center">
+              <div className="flex space-x-5">
+                {policyLinks.map(({ label, href }, i) => (
+                  <Link
+                    key={i}
+                    href={href}
+                    className="hover:text-[#df865b] transition-colors"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+              <Link
+                href="https://webitya.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-gray-400 hover:text-[#df865b] transition-colors"
+              >
+                Website Design by Webitya
+              </Link>
             </div>
           </div>
         </motion.div>
