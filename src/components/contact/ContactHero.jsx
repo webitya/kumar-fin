@@ -1,8 +1,14 @@
 "use client"
 
+import { useState } from "react"
 import { Phone, Mail, MapPin, Clock, Building2, Send, User, MessageSquare } from "lucide-react"
+import { useToast } from "@/hooks/use-toast" // Assuming useToast is available for notifications
 
-export default function CreativeContactPage() {
+export default function Page() {
+  const { toast } = useToast()
+  const [submissionStatus, setSubmissionStatus] = useState("idle") // "idle", "sending", "success", "error"
+  const [submissionMessage, setSubmissionMessage] = useState(null)
+
   const contactDetails = [
     {
       icon: <Phone className="h-5 w-5 text-white" />,
@@ -30,6 +36,77 @@ export default function CreativeContactPage() {
     },
   ]
 
+  const handleSubmit = async (event) => {
+    event.preventDefault() // Prevent default form submission
+    setSubmissionStatus("sending")
+    setSubmissionMessage(null) // Clear previous messages
+
+    const formData = new FormData(event.currentTarget)
+    const data = {
+      fullName: formData.get("fullName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      service: formData.get("service"),
+      message: formData.get("message"),
+    }
+
+    try {
+      const response = await fetch("/api/sendemail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (response.ok && result.success) {
+        // Check both response.ok and result.success
+        setSubmissionStatus("success")
+        setSubmissionMessage(result.message)
+        toast({
+          title: "Success!",
+          description: result.message,
+          variant: "default",
+        })
+        // Reset the form fields after successful submission
+        event.target.reset()
+      } else {
+        setSubmissionStatus("error")
+        setSubmissionMessage(result.message || "An unknown error occurred.")
+        toast({
+          title: "Error!",
+          description: result.message || "Failed to send your message.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      setSubmissionStatus("error")
+      setSubmissionMessage("An unexpected error occurred. Please try again.")
+      toast({
+        title: "Error!",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      })
+    }
+  }
+
+  // Determine button text based on submissionStatus
+  const getButtonText = () => {
+    switch (submissionStatus) {
+      case "sending":
+        return "Sending..."
+      case "success":
+        return "Successfully sent!"
+      case "error":
+        return "Message not sent"
+      default:
+        return "Send Message"
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
       {/* Hero Section */}
@@ -51,7 +128,6 @@ export default function CreativeContactPage() {
           </p>
         </div>
       </section>
-
       {/* Main Content */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,40 +146,46 @@ export default function CreativeContactPage() {
                     We'd love to hear from you. Send us a message and we'll respond as soon as possible.
                   </p>
                 </div>
-
                 {/* Compact Form */}
-                <form className="space-y-4">
+                <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                       <input
                         type="text"
+                        name="fullName"
                         placeholder="Full Name"
                         className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white text-sm"
+                        required
                       />
                     </div>
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                       <input
                         type="email"
+                        name="email"
                         placeholder="Email Address"
                         className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white text-sm"
+                        required
                       />
                     </div>
                   </div>
-
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                     <input
                       type="tel"
+                      name="phone"
                       placeholder="Phone Number"
                       className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white text-sm"
                     />
                   </div>
-
                   <div className="relative">
-                    <select className="w-full px-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white appearance-none text-sm">
+                    <select
+                      name="service"
+                      className="w-full px-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white appearance-none text-sm"
+                    >
                       <option value="">Select Service</option>
+                       <option value="tender-apply">Tender Apply</option>
                       <option value="financial-planning">Financial Planning</option>
                       <option value="tax-consultation">Tax Consultation</option>
                       <option value="legal-advice">Legal Advice</option>
@@ -111,24 +193,27 @@ export default function CreativeContactPage() {
                       <option value="other">Other</option>
                     </select>
                   </div>
-
                   <div className="relative">
                     <MessageSquare className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                     <textarea
+                      name="message"
                       placeholder="Tell us about your requirements..."
                       rows="3"
                       className="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white resize-none text-sm"
+                      required
                     ></textarea>
                   </div>
-
-                  <button className="w-full bg-gradient-to-r from-[#df865b] to-[#c67549] text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center group">
+                  <button
+                    type="submit"
+                    disabled={submissionStatus === "sending"} // Disable button only while sending
+                    className="w-full bg-gradient-to-r from-[#df865b] to-[#c67549] text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center group"
+                  >
                     <Send className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
-                    Send Message
+                    {getButtonText()}
                   </button>
                 </form>
               </div>
             </div>
-
             {/* Right Side - Compact Contact Details */}
             <div className="space-y-4">
               {/* Compact Company Header */}
@@ -146,7 +231,6 @@ export default function CreativeContactPage() {
                   Professional financial and legal consulting with personalized solutions for your success.
                 </p>
               </div>
-
               {/* Compact Contact Cards - 2x2 Grid */}
               <div className="grid grid-cols-2 gap-3">
                 {contactDetails.map((item, index) => (
@@ -170,7 +254,6 @@ export default function CreativeContactPage() {
                   </div>
                 ))}
               </div>
-
               {/* Compact Service Guarantee */}
               <div className="bg-gradient-to-br from-[#604235] to-[#4a332a] p-5 rounded-xl text-white shadow-lg">
                 <div className="flex items-center mb-3">
@@ -198,7 +281,6 @@ export default function CreativeContactPage() {
                   </div>
                 </div>
               </div>
-
               {/* Quick Stats */}
               <div className="bg-white p-4 rounded-xl shadow-md border border-gray-100">
                 <div className="grid grid-cols-3 gap-4 text-center">

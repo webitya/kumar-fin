@@ -12,7 +12,7 @@ export default function ServicesHero() {
             Elevate Your Business with Our Expert Services
           </h1>
           <p className="text-base md:text-lg text-white/90 max-w-3xl mx-auto mb-10">
-            We provide comprehensive financial, taxation, legal, and tender solutions designed to support businesses and individuals with professionalism, accuracy, and dedication.
+            We provide comprehensive Tender,Financial, Taxation and Legal solutions designed to support businesses and individuals with professionalism, accuracy, and dedication.
           </p>
         </div>
 
@@ -20,10 +20,10 @@ export default function ServicesHero() {
         <div className="absolute bottom-4 w-full overflow-hidden z-10">
           <div className="animate-marquee text-white/80 text-sm md:text-base font-medium whitespace-nowrap">
             <span className="inline-block px-8">
-              Accounting & Taxation • GST Compliance • Legal Documentation • Tender Support • Business Advisory •
+              Tender • Accounting & Taxation • GST Compliance • Legal Documentation • Tender Support • Business Advisory •
             </span>
             <span className="inline-block px-8">
-              Accounting & Taxation • GST Compliance • Legal Documentation • Tender Support • Business Advisory •
+              Tender • Accounting & Taxation • GST Compliance • Legal Documentation • Tender Support • Business Advisory •
             </span>
           </div>
         </div>
