@@ -28,8 +28,8 @@ const quickLinks = [
 ]
 
 const policyLinks = [
-  { label: "Privacy Policy", href: "/privacypolicy" },
-  { label: "Terms of Service", href: "/termsofservice" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" },
   { label: "Sitemap", href: "/sitemap" },
 ]
 

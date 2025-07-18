@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Phone, Mail, MapPin, Clock, Building2, Send, User, MessageSquare } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Building2, Send, User, MessageSquare, ChevronDown } from "lucide-react" // Import ChevronDown
 import { useToast } from "@/hooks/use-toast" // Assuming useToast is available for notifications
 
 export default function Page() {
@@ -13,25 +13,25 @@ export default function Page() {
     {
       icon: <Phone className="h-5 w-5 text-white" />,
       title: "Phone",
-      details: ["+91 XXXXX XXXXX", "+91 XXXXX XXXXX"],
+      details: ["+91 7488380079", ""],
       bgColor: "bg-gradient-to-br from-[#27545b] to-[#1e3f44]",
     },
     {
       icon: <Mail className="h-5 w-5 text-white" />,
       title: "Email",
-      details: ["info@kumarfin.com", "contact@kumarfin.com"],
+      details: ["kumarfinconsultant@gmail.com", ""],
       bgColor: "bg-gradient-to-br from-[#df865b] to-[#c67549]",
     },
     {
       icon: <MapPin className="h-5 w-5 text-white" />,
       title: "Address",
-      details: ["Your Business Address", "City, State - PIN Code"],
+      details: ["1st Floor, Raj Complex, Kanke Rd, opposite Speaker House,", "Ranchi, Jharkhand - 834008"],
       bgColor: "bg-gradient-to-br from-[#604235] to-[#4a332a]",
     },
     {
       icon: <Clock className="h-5 w-5 text-white" />,
       title: "Hours",
-      details: ["Mon–Fri: 9AM–6PM", "Sat: 9AM–2PM"],
+      details: ["Mon–Fri: 10AM–07PM", "Sat: 10AM–07PM"],
       bgColor: "bg-gradient-to-br from-[#27545b] to-[#604235]",
     },
   ]
@@ -113,7 +113,7 @@ export default function Page() {
       <section className="relative py-20 bg-gradient-to-r from-[#27545b] via-[#604235] to-[#df865b] overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#df865b]/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#df865b]/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center mb-6">
@@ -180,18 +180,22 @@ export default function Page() {
                     />
                   </div>
                   <div className="relative">
+                    {" "}
+                    {/* Added relative wrapper */}
                     <select
                       name="service"
-                      className="w-full px-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white appearance-none text-sm"
+                      className="w-full px-3 py-3 pr-10 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#df865b] focus:border-transparent outline-none transition-all duration-200 bg-gray-50 focus:bg-white appearance-none text-sm"
                     >
                       <option value="">Select Service</option>
-                       <option value="tender-apply">Tender Apply</option>
+                      <option value="tender">Tender</option>
                       <option value="financial-planning">Financial Planning</option>
                       <option value="tax-consultation">Tax Consultation</option>
                       <option value="legal-advice">Legal Advice</option>
                       <option value="business-consultation">Business Consultation</option>
                       <option value="other">Other</option>
                     </select>
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />{" "}
+                    {/* Dropdown icon */}
                   </div>
                   <div className="relative">
                     <MessageSquare className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
@@ -224,7 +228,7 @@ export default function Page() {
                   </div>
                   <div>
                     <h2 className="text-lg font-bold">KUMAR Fin. Consultant</h2>
-                    <p className="text-white/80 text-sm">Pappu Kumar Consultant</p>
+                    <p className="text-white/80 text-sm">Pappu Kumar Gupta</p>
                   </div>
                 </div>
                 <p className="text-white/90 text-sm leading-relaxed">
@@ -269,7 +273,7 @@ export default function Page() {
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-[#df865b] rounded-full mr-2"></div>
-                    <span className="text-xs">24hr Response</span>
+                    <span className="text-xs">24/7 Support</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-[#df865b] rounded-full mr-2"></div>
@@ -285,7 +289,7 @@ export default function Page() {
               <div className="bg-white p-4 rounded-xl shadow-md border border-gray-100">
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-[#27545b]">10+</div>
+                    <div className="text-2xl font-bold text-[#27545b]">11+</div>
                     <div className="text-xs text-gray-600">Years Experience</div>
                   </div>
                   <div>
