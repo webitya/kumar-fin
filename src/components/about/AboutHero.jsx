@@ -20,7 +20,7 @@ const AboutHero = () => {
           transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
         >
           Your trusted partner for comprehensive financial and legal consulting services, led by experienced
-          professional <span className="text-[#df865b] font-medium">Pappu Kumar</span>.
+          professional <span className="text-[#df865b] font-medium">Pappu Kumar Gupta</span>.
         </motion.p>
       </div>
     </section>
