@@ -84,7 +84,7 @@ export async function POST(request) {
           <div style="background-color: #f5f5f5; padding: 20px; text-align: center; font-size: 12px; color: #777; border-top: 1px solid #e0e0e0;">
             <p style="margin: 0 0 8px;">&copy; ${new Date().getFullYear()} KUMAR Fin. Consultant. All rights reserved.</p>
             <p style="margin: 0; font-size: 11px; color: #888;">
-              Powered by <a href="https://webitya.com" style="color: #df865b; text-decoration: none; font-weight: bold;">WEBITYA</a>, your trusted Digital Marketing partner.
+              Powered by <a href="https://webitya.com" style="color: #df865b; text-decoration: none; font-weight: bold;">WEBITYA</a>,.
               All communications are secured with end-to-end encryption provided by WEBITYA.
             </p>
           </div>
@@ -119,7 +119,7 @@ export async function POST(request) {
           <div style="background-color: #f5f5f5; padding: 20px; text-align: center; font-size: 12px; color: #777; border-top: 1px solid #e0e0e0;">
             <p style="margin: 0 0 8px;">&copy; ${new Date().getFullYear()} KUMAR Fin. Consultant. All rights reserved.</p>
             <p style="margin: 0; font-size: 11px; color: #888;">
-              Powered by <a href="https://webitya.com" style="color: #df865b; text-decoration: none; font-weight: bold;">WEBITYA</a>, your trusted Digital Marketing partner.
+              Powered by <a href="https://webitya.com" style="color: #df865b; text-decoration: none; font-weight: bold;">WEBITYA</a>,.
               All communications are secured with end-to-end encryption provided by WEBITYA.
             </p>
           </div>
