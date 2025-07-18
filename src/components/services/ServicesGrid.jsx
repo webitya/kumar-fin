@@ -7,6 +7,19 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 
 export default function ServicesGrid() {
   const serviceCategories = [
+     {
+      title: 'Tender Services',
+      icon: <AssignmentIcon className="h-8 w-8 text-[#df865b]" />,
+      description: 'Expert guidance for successful tender applications and documentation.',
+      services: [
+        'Government Tender Support',
+        'GEM Portal Registration & Bidding',
+        'Coal E-Auction Services',
+        'Railway Tender Processing',
+        'Tender Documentation',
+        'Bid Preparation & Submission',
+      ],
+    },
     {
       title: 'Accounting & Taxation',
       icon: <ReceiptIcon className="h-8 w-8 text-[#df865b]" />,
@@ -38,31 +51,23 @@ export default function ServicesGrid() {
       icon: <VerifiedUserIcon className="h-8 w-8 text-[#df865b]" />,
       description: 'A broad spectrum of professional certifications, registrations, and compliance services.',
       services: [
-        'DSC (Digital Signature Certificate)',
-        'EPF & ESI Registration & Return Filing',
-        'Trade Mark Registration',
-        'ISO Certification Assistance',
-        'NGO / Society / Trust Registration',
-        'FSSAI License & Registration',
         'Legal & Notary Services',
-        'Drafting License & Support',
-        'MSME / Udyam Registration',
         'Regulatory Compliance',
+        'NGO / Society / Trust Registration',
+        'EPF & ESI Registration & Return Filing',
+        'MSME / Udyam Registration',
+        'DSC (Digital Signature Certificate)',
+        'ISO Certification Assistance',
+        'Trade Mark Registration',
+        'Drafting License & Support',
+        'FSSAI License & Registration',
+        
+        
+       
+        
       ],
     },
-    {
-      title: 'Tender Services',
-      icon: <AssignmentIcon className="h-8 w-8 text-[#df865b]" />,
-      description: 'Expert guidance for successful tender applications and documentation.',
-      services: [
-        'Government Tender Support',
-        'GEM Portal Registration & Bidding',
-        'Coal E-Auction Services',
-        'Railway Tender Processing',
-        'Tender Documentation',
-        'Bid Preparation & Submission',
-      ],
-    },
+   
   ];
 
   return (

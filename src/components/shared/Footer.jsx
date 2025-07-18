@@ -106,7 +106,7 @@ export default function Footer() {
             </div>
 
             <p className="text-gray-400 mb-6 leading-relaxed text-sm">
-              Expert Financial and Legal Consulting Services in Taxation, GST,
+              Expert Financial and Legal Consulting Services in Tender, Taxation, GST,
               Accounting & Compliance. Trusted by Businesses and Individuals for
               results-driven solutions.
             </p>

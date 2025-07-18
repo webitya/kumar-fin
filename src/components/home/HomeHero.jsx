@@ -27,7 +27,7 @@ export default function HomeHero() {
 
             {/* Compact Description */}
             <p className="text-sm md:text-base leading-relaxed text-white/80 mb-6 max-w-xl mx-auto lg:mx-0">
-             Expert Solutions for Accounting, Taxation, GST Compliance, and Legal Services. Professional Excellence with Guaranteed Results.
+             Expert Solutions for Tender, Accounting, Taxation, GST Compliance, and Legal Services. Professional Excellence with Guaranteed Results.
             </p>
 
             {/* Compact CTA Buttons */}
