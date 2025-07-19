@@ -330,11 +330,11 @@ export default function CareersPage() {
                       } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm appearance-none bg-white`}
                     >
                       <option value="">Select Position</option>
-                      <option value="Senior Legal Advisor">Senior Legal Advisor</option>
-                      <option value="Tax Consultant">Tax Consultant</option>
-                      <option value="Junior Associate">Junior Associate</option>
                       <option value="Accountant">Accountant</option>
                       <option value="Legal Assistant">Legal Assistant</option>
+                      <option value="Office Assistant">Office Assistant</option>
+                      <option value="Computer Operator">Computer Operator</option>
+                      <option value="Telemarketing">Telemarketing</option>
                       <option value="Other">Other</option>
                     </select>
                   </div>
