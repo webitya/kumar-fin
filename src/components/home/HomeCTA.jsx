@@ -16,7 +16,7 @@ export default function HomeCTA() {
             Ready to <span className="text-[#df865b]">Transform</span> Your Business?
           </h2>
 
-          <p className="text-sm md:text-base leading-relaxed text-white/90 mb-8">
+          <p className="text-sm md:text-base leading-relaxed text-white/90 mb-9">
             Contact us for expert consultation and let us handle your financial and legal needs with dedication and results.
           </p>
 
