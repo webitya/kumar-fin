@@ -335,6 +335,7 @@ export default function CareersPage() {
                       <option value="Office Assistant">Office Assistant</option>
                       <option value="Computer Operator">Computer Operator</option>
                       <option value="Telemarketing">Telemarketing</option>
+<option value="Peon">Peon</option>
                       <option value="Other">Other</option>
                     </select>
                   </div>
