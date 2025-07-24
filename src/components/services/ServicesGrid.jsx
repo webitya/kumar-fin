@@ -38,8 +38,8 @@ export default function ServicesGrid() {
       icon: <BusinessIcon className="h-8 w-8 text-[#df865b]" />,
       description: 'End-to-end GST registration, filing, audit, and advisory solutions.',
       services: [
-        'GST Registration & Setup',
-        'GST Return Filing (GSTR-1, GSTR-3B)',
+        'GST Registration',
+        'GST Return Filing',
         'GST Audit & Assessment',
         'GST Legal Compliance',
         'GST Refund Processing',

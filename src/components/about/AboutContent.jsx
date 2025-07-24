@@ -30,7 +30,7 @@ export default function AboutContent() {
               Professional Excellence in Financial Services
             </h2>
             <p className="text-sm md:text-base text-[#604235] mb-4">
-              KUMAR Fin. Consultant, under the leadership of Pappu Kumar, has been providing exceptional financial and legal consulting services to businesses and individuals.
+              KUMAR Fin. Consultant, under the leadership of Pappu Kumar Gupta, has been providing exceptional financial and legal consulting services to businesses and individuals.
             </p>
             <p className="text-sm md:text-base text-[#604235] mb-4">
               We specialize in a comprehensive range of services including accounting, taxation, GST compliance, and more.
